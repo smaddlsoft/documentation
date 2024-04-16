@@ -2,283 +2,394 @@
 Event essentials
 ================
 
-Odoo Events provides event coordinators with an arsenal of planning, communications, and reporting
-tools to create immersive and engaging experiences for customers. Namely, staff can create and
-publish events on their website, sell tickets online, scan tickets with Odoo barcode, send out
-automated emails, and generate rich reporting data once the event accepts registrations.
+The Odoo *Events* application allows users to create, manage, and analyze events of any kind, with
+a complete suite of planning, communication, and reporting tools.
 
-Kanban concepts and organization
-================================
+Odoo *Events* is fully-integrated with other Odoo applications, which provides users with the
+ability to publish events on their website, sell tickets (online or via sales orders), and grant
+access to attendees, via barcodes or QR codes. Odoo *Events* also allows users to send automated
+messages and social posts leading up to *and* after the event.
 
-To get started, click on the :guilabel:`Events` application on the home dashboard, which then leads
-to the kanban view populated with a variety of pipeline stages. Key information is listed on each
-event card, such as the date/time of the event, along with the number of expected (and confirmed)
-attendees.
+Users can generate and gather valuable data about their events, and their attendees, which they can
+use to improve their overall decision-making and event-planning in the future.
 
-To create a new stage, click :guilabel:`Add a Column` and provide a befitting title to reflect the
-purpose of that stage.
+.. _event_essentials/dashboards:
 
-To reorganize the stages, just drag-and-drop them until they are in the correct order. Stages can
-also be “folded” in the kanban for a cleaner presentation, via the :guilabel:`Settings` menu to the
-right of each stage's title, which is represented by a gear icon.
+Dashboards
+==========
+
+When the *Events* application is opened, Odoo reveals the main :guilabel:`Events` dashboard, which
+can be viewed in a number of different ways. Those different view options are accessible from the
+:guilabel:`Events` dashboard in the upper-right corner, via a series of view-related icon buttons.
+
+.. image:: event_essentials/view-icons.png
+   :align: center
+   :alt: The various view icon buttons in the upper-right corner of the dashboard.
+
+The different view options are:
+
+- :ref:`Kanban <event_essentials/dashboards/kanban>` (default)
+- :ref:`Calendar <event_essentials/dashboards/calendar>`
+- :ref:`List <event_essentials/dashboards/list>`
+- :ref:`Gantt <event_essentials/dashboards/gantt>`
+- :ref:`Pivot <event_essentials/dashboards/pivot>`
+- :ref:`Graph <event_essentials/dashboards/graph>`
+- :ref:`Map <event_essentials/dashboards/map>`
+- :ref:`Activity <event_essentials/dashboards/activity>`
+
+If at any time the user desires to navigate back to the main dashboard, they can do so by going to
+:menuselection:`Events app --> Events`.
+
+By default, the :guilabel:`Events` dashboard shows *all* the events in the database.
+
+.. _event_essentials/dashboards/kanban:
+
+Kanban view
+-----------
+
+The Kanban view is the default view of the main :guilabel:`Events` dashboard, and is represented by
+the view option displayed as the :guilabel:`two downward-facing columns` icon, located in the
+upper-right corner.
+
+This view showcases all the events in the database in their respective stages. By default, the
+stages are: :guilabel:`New`, :guilabel:`Booked`, :guilabel:`Announced`, :guilabel:`Ended`, and
+:guilabel:`Cancelled`.
+
+.. image:: event_essentials/kanban-dashboard.png
+   :align: center
+   :alt: The default Kanban dashboard of the Odoo Events application.
 
 .. note::
-   The gear icon, by default, is hidden and will appear next to the  :guilabel:`+` icon when moused
-   over.
+   The :guilabel:`Ended` and :guilabel:`Cancelled` stages are folded, by default, and located to the
+   right of the other stages.
 
-When clicked, a drop-down menu of settings will appear.
+To add a new stage to the Kanban pipeline, click the :guilabel:`+ Stage` button, located to the
+far-right of all the stages. Doing so reveals a :guilabel:`Stage...` text field, in which the name
+of the new stage can be entered. When ready, click :guilabel:`Add` to add the new stage to the
+Kanban pipeline. Users can also click :kbd:`Esc`, or simply click away, to discard.
 
-.. image:: event_essentials/events-dashboard.png
+.. image:: event_essentials/stage-field.png
    :align: center
-   :alt: Overview of events setting with the kanban view in Odoo Events.
+   :alt: The Stage text field when adding a new stage to the Odoo Events application.
 
-Create a new event
-==================
+There are two ways to edit event Kanban stages.
 
-To create an event, click :guilabel:`Create` from the Events dashboard. Odoo will then direct the
-page to a blank event template form.
+One, users can hover their cursor beside the stage title to reveal a :guilabel:`⚙️ (gear)` icon.
+When clicked, a drop-down menu appears with various options.
 
-From the event form, fill out the necessary fields, either by choosing from existing data in the
-Odoo database or by creating and editing new field data. Key information to enter for the event
-includes:
-
-- :guilabel:`Event Name`: give the event a title.
-- :guilabel:`Date`: includes the start and end dates/times for the event.
-- :guilabel:`Timezone`: covers the timezone for when the event is taking place.
-- :guilabel:`Template`: choose from a pre-built event template or build a custom one and connect it
-  here.
-- :guilabel:`Tags`: add tags to indicate briefly what the event is for (e.g. `tradeshow`). Tags
-  help better organize event cards in the kanban and are useful when using search filters during
-  reporting periods.
-- :guilabel:`Organizer`: detail the organizer(s) for the event. This field is usually the company
-  that owns the Odoo database, or a vendor.
-- :guilabel:`Responsible`: name the point person who is responsible for organizing the event.
-- :guilabel:`Website`: indicate which Odoo website(s) the event event should be published to.
-- :guilabel:`Venue`: list the venue details here if it's a new record, or choose from an existing
-  location.
-- :guilabel:`Limit Registrations`: when enabled, this setting caps the attendee registrations to a
-  specified amount
-- :guilabel:`Autoconfirmation`: when enabled, this setting skips the confirmation request that gets
-  sent by email to event registrants, and automatically confirms their registration.
-
-Once the fields in the event form are set, move on to the :guilabel:`Tickets` and
-:guilabel:`Communication` tabs, and optionally the :guilabel:`Questions` tab if registrations
-should require additional information.
-
-Add and sell event tickets
---------------------------
-
-Under the :guilabel:`Tickets` tab, add line items for each type of ticket the event plans to offer.
-Here, determine the ticket price, start/end dates for registrations, as well as the maximum number
-of tickets that can be sold.
-
-If selling tickets isn't necessary for the event, a simple :guilabel:`Registration` button will be
-displayed on the event's page by default.
-
-.. image:: event_essentials/events-tickets-tab.png
+.. image:: event_essentials/gear-dropdown.png
    :align: center
-   :alt: View of the ticket tab in Odoo Events.
+   :alt: The gear drop-down menu at the top of a stage on the Odoo Events main dashboard.
 
-Send automated emails, text, and social posts to event attendees
-----------------------------------------------------------------
+Select :guilabel:`Edit` from this list to reveal an :guilabel:`Edit:(stage name)` pop-up window.
 
-Under the :guilabel:`Communication` tab, configure personalized email, SMS, or social post messages
-to keep in touch with event attendees. For each communication, click :guilabel:`Add a line` in the
-:guilabel:`Communication` tab form, and then choose (or create) a communications template using
-the drop-down menu under the :guilabel:`Template` column.
-
-Next, define the :guilabel:`Interval` and :guilabel:`Unit` of time for how often the communication
-should be sent; use these time fields to specify the frequency of :guilabel:`Hours`,
-:guilabel:`Days`, :guilabel:`Weeks`, or :guilabel:`Months` communications should be sent. There is
-also the option to send communications `Immediately` after a specified :guilabel:`Trigger` is
-activated.
-
-In the last column, determine the :guilabel:`Trigger` which controls how and when the communication
-is sent. For this action, choose between: :guilabel:`Before the event`, :guilabel:`After each
-registration`, or :guilabel:`After the event`.
-
-.. image:: event_essentials/events-communication-tab.png
+.. image:: event_essentials/edit-stage-popup.png
    :align: center
-   :alt: View of the communication tab in Odoo Events.
+   :alt: The edit stage pop-up window that appears in the Odoo Events application.
 
-Attach a questionnaire to event registrations
----------------------------------------------
+From here, users can modify the configurations of this particular stage however they'd like. Then,
+when all the necessary edits are complete, they can click :guilabel:`Save & Close` to save and
+implement their changes, or :guilabel:`Discard` to discard them.
 
-Implementing a questionnaire during event sign up is an effective way to gauge the wants, needs,
-and interests of the event's attendees ahead of time. Questionnaires also act as informative
-analytics tools for reporting periods before (or after) events take place.
+The second way users can edit event Kanban stages is to navigate to :menuselection:`Events app -->
+Configuration --> Event Stages`. Then, from the :guilabel:`Event Stages` page, users can select an
+existing stage from the list to modify it on a separate page, or click :guilabel:`New` to create a
+new one.
 
-To create a questionnaire, from the :guilabel:`Events` application, navigate to
-:menuselection:`Configuration --> Settings` and then enable the :guilabel:`Questions` setting.
+Every event is represented by an individual Kanban card, which displays its most pertinent
+information.
 
-With the setting enabled, questions and answers can now be added (and recorded) under the the
-:guilabel:`Questions` tab back on the event form. For each question, specify if it should only
-be asked once with the :guilabel:`Ask once per order` checkbox, or if the question requires a
-:guilabel:`Mandatory Answer`, which will make the question required for registration.
-
-.. example::
-   If the :guilabel:`Once per order` checkbox is enabled, then a single registration for 3 event
-   attendees will show the questionnaire only once.
-
-There are two :guilabel:`Question Types` to choose from: :guilabel:`Selection` and :guilabel:`Text
-Input`. The :guilabel:`Selection` type, allows attendees to select an answer from pre-configured
-options, which are entered in the :guilabel:`Answers` tab below. The :guilabel:`Text Input` type
-allows attendees to write in their own answer to the question in a text box.
-
-.. image:: event_essentials/events-questions-tab.png
+.. image:: event_essentials/event-kanban-card.png
    :align: center
-   :alt: View of an event form, open the questions tab, and add a question.
+   :alt: Typical event kanban card in the Odoo Events application.
 
-Log internal notes or add ticket instructions
----------------------------------------------
+On each event card, users can find the scheduled date of the event, the name of the event, the
+location, the number of expected :guilabel:`Attendees`, any scheduled activities related to the
+event, the status of the event, and the person responsible for the event.
 
-In the :guilabel:`Notes` tab, there is the option to add a :guilabel:`Note` and/or :guilabel:`Ticket
-instructions`.
+To quickly add a new event to a pipeline, click the :guilabel:`➕ (plus)` icon at the top of the
+stage to which the event should be added to reveal a blank Kanban card to fill out.
 
-Under :guilabel:`Note`, internal notes can be left (such as: to-do lists, contact information,
-etc.) for event staff to reference. In the :guilabel:`Ticket instructions` field, helpful
-information for staff and attendees can be shared (like, directions to the venue, opening/closing
-times, etc.)
-
-.. tip::
-   Type `/` in either text field (:guilabel:`Note` or :guilabel:`Ticket instructions`) to reveal a
-   sub-menu of :guilabel:`Structure` options. These options provide various formatting options to
-   ensure vital internal information is organized for event staff to review.
-
-.. image:: event_essentials/events-notes-tab.png
+.. image:: event_essentials/blank-kanban-card.png
    :align: center
-   :alt: View of the Notes tab in Odoo Events.
+   :alt: Typical blank kanban card to fill out in the Odoo Events application.
 
-Invite attendees to the event
-=============================
+In this blank Kanban card, enter the name of :guilabel:`Event`, along with the start and end
+:guilabel:`Date` and time.
 
-To invite people to an event, click the :guilabel:`Invite` button located in the top left corner of
-the event form.
+Then, either click :guilabel:`Add` to add it to the stage and edit it later, or click
+:guilabel:`Edit` to add the event to stage and edit its configurations on a separate page.
 
-Inside the invite template form, are options to sent email or SMS invites. Each message can be fully
-customized, and recipients can be added.
+Each event card can be dragged-and-dropped into any stage on the Kanban pipeline, providing easy
+organizational access.
 
-Adding a :guilabel:`Subject` line for the invite message is required, but the :guilabel:`Preview
-Text` field is optional. The :guilabel:`Preview Text` is a catchy preview sentence meant to
-encourage recipients to open the email.
+.. _event_essentials/dashboards/calendar:
+
+Calendar view
+-------------
+
+The calendar view of the :guilabel:`Events` dashboard can be accessed by clicking the :guilabel:`📆
+(calendar)` icon in the upper-right corner. Doing so transforms the dashboard into a calendar
+showing the current :guilabel:`Month`, by default.
+
+.. image:: event_essentials/calendar-view.png
+   :align: center
+   :alt: The calendar view of the Odoo Events dashboard in the Odoo Events application.
+
+To change the type of calendar, click the default :guilabel:`Month` drop-down menu in the upper-left
+corner to reveal a drop-down menu of other calendar view options. Those options are:
+:guilabel:`Day`, :guilabel:`Week`, :guilabel:`Month` (default), :guilabel:`Year`, and
+:guilabel:`Show weekends` (default).
+
+Navigate to past or future dates using the :guilabel:`⬅️ (left arrow)` or :guilabel:`➡️ (right
+arrow)` buttons. Quickly return to the current date by clicking the :guilabel:`Today` button.
+
+The right sidebar showcases a smaller version of the monthly calendar, along with
+:guilabel:`Responsible` and :guilabel:`Template` sections, each listing selectable responsibles and
+event templates in the database, respectively.
+
+Clicking on a date on the calendar reveals a :guilabel:`New Event` pop-up window.
+
+.. image:: event_essentials/new-event-popup-window.png
+   :align: center
+   :alt: The New Event pop-up window in the Odoo Events application.
+
+In this pop-up window, enter a :guilabel:`Name` for the event to be scheduled for that desired date.
+
+Then, click either :guilabel:`Create` to create the event and add it to the calendar, or
+:guilabel:`Edit` to create the event, add it to the calendar, and edit its configurations right away.
+
+If the user no longer wishes to add an event on this date, either click :guilabel:`Cancel` or
+:guilabel:`X` to remove the :guilabel:`New Event` pop-up window.
+
+.. _event_essentials/dashboards/list:
+
+List view
+---------
+
+The list view of the :guilabel:`Events` dashboard can be accessed by clicking the :guilabel:`≣
+(bars)` icon in the upper-right corner. Doing so reveals all the event information presented in an
+organized list.
+
+.. image:: event_essentials/dashboard-list-view.png
+   :align: center
+   :alt: The Odoo Events dashboard in list view in the Odoo Events application.
+
+The following informative columns are available in this view, by default:
+
+- :guilabel:`Event`
+- :guilabel:`Venue`
+- :guilabel:`Responsible`
+- :guilabel:`Company`
+- :guilabel:`Website`
+- :guilabel:`Start Date`
+- :guilabel:`End Date`
+- :guilabel:`Total Attendees`
+- :guilabel:`Number of Attendees`
+- :guilabel:`Stage`
+
+For additional column options, click the :guilabel:`(optional columns drop-down)` menu, located to
+the far-right of the column titles.
+
+.. _event_essentials/dashboards/gantt:
+
+Gantt view
+----------
+
+The gantt view of the :guilabel:`Events` dashboard is accessible by clicking the :guilabel:`three
+black-and-white horizontal bars` icon in the upper-right corner. Doing so reveals the dashboard as
+a series of rows and columns, with the months as columns and the various event venues as rows.
+
+By default, the gantt view shows the current :guilabel:`Year` with the current month highlighted.
+
+.. image:: event_essentials/gantt-view-dashboard.png
+   :align: center
+   :alt: The gantt view of the dashboard in the Odoo Events application.
+
+Located inside the gantt view, are the various scheduled events for those designated times (e.g.
+Month, Week, etc.).
+
+To change the shown amount of time on the gantt view, click the default :guilabel:`Year` drop-down
+menu in the upper-left corner. Doing so reveals a drop-down menu of other time options, including:
+:guilabel:`Day`, :guilabel:`Week`, :guilabel:`Month`, and :guilabel:`Year` (default).
+
+Navigate to past or future dates using the :guilabel:`⬅️ (left arrow)` or :guilabel:`➡️ (right
+arrow)` buttons. Quickly return to the current date by clicking the :guilabel:`Today` button.
+
+Clicking on a desired block of the gantt view reveals a :guilabel:`Create` pop-up window.
+
+.. image:: event_essentials/create-popup-window-gantt.png
+   :align: center
+   :alt: The create pop-up window in the gantt view of the main Odoo Events dashboard.
+
+In this pop-up window, proceed to create and configure an event. When all desired configurations are
+complete, click :guilabel:`Save & Close` to add it to the gantt view.
+
+.. _event_essentials/dashboards/pivot:
+
+Pivot view
+----------
+
+The pivot view of the :guilabel:`Events` dashboard is accessible by clicking the :guilabel:`chart`
+icon in the upper-right corner. Doing so reveals an abbreviated pivot table of basic event-related
+metrics, which can be expanded (and customized) in a number of different ways.
+
+To learn more about the various ways the pivot view can be configured, checkout the :ref:`pivot view
+documentation <reporting/using-pivot>`.
+
+.. _event_essentials/dashboards/graph:
+
+Graph view
+----------
+
+The graph view of the :guilabel:`Events` dashboard is accessible by clicking the :guilabel:`Graph`
+icon in the upper-right corner. Doing so reveals a default bar chart of event-related data, but this
+dashboard can be viewed in a number of different graph styles, with various filtering options.
+
+To learn more about the various ways the graph view can be utilized, checkout the :ref:`graph view
+documentation <reporting/using-graph>`.
+
+.. _event_essentials/dashboards/map:
+
+Map view
+--------
+
+The map view of the :guilabel:`Events` dashboard is accessible by clicking the :guilabel:`Map`
+button, which is represented by a :guilabel:`map waypoint` icon, in the upper-right corner. Doing so
+reveals a interactive world map, showcasing the various locations of events in the database.
+
+.. image:: event_essentials/map-view-dashboard.png
+   :align: center
+   :alt: The Map view of the Odoo Events main dashboard in the Odoo Events application.
+
+Clicking on any location pin on the map reveals a pop-up window, showing the address of the event,
+along with an :guilabel:`Open` button and a :guilabel:`Navigate to` button.
+
+.. image:: event_essentials/map-view-poup.png
+   :align: center
+   :alt: The pop-up window that appears in the Map view of the main Odoo Events dashboard.
+
+If there are multiple events at a single location, represented by a number beside the map waypoint,
+the :guilabel:`Open` button reveals an *Events* page, listing all the events for that particular
+location. However, if there is only one event at a location, clicking :guilabel:`Open` reveals that
+specific event page.
+
+The :guilabel:`Navigate to` button opens a *Google Maps* page on a new browser tab, showing
+directions for how to navigate to that event venue from the user's current location.
+
+Clicking the :guilabel:`View in Google Maps` button opens a separate browser tab, showing a *Google
+Maps* page with location indicators on all the event venues shown in the Odoo *Events* application.
+
+.. _event_essentials/dashboards/activity:
+
+Activity view
+-------------
+
+The activity view of the :guilabel:`Events` dashboard is accesible by clicking the :guilabel:`🕘
+(clock)` icon. Doing so reveals all the scheduled activities related to events in a color-coded
+chart.
+
+.. image:: event_essentials/activity-view-dashboard.png
+   :align: center
+   :alt: The Activity view of the main Odoo Events dashboard in the Odoo Events application.
+
+Each column on the chart represents a different activity type, and each row represents a separate
+event those activities are associated with.
+
+New activities can be scheduled from this view in two different ways. The user could click into the
+square of the desired activity and event, and proceed to schedule the event in the resulting pop-up
+window.
+
+Or, click :guilabel:`+ Schedule activity`, located at the bottom of the events row, which opens a
+:guilabel:`Search: Event` pop-up window. From here, select the desired event, and proceed to
+schedule the desired activity.
+
+To learn more about activities in Odoo, refer to the :doc:`activities documentation
+<../../essentials/activities>`.
+
+Settings
+========
+
+To access the event settings and feature options in Odoo *Events*, navigate to
+:menuselection:`Events app --> Configuration --> Settings`. From here, tick the checkboxes beside
+the desired settings and/or features, and click :guilabel:`Save` to activate them.
+
+Events section
+--------------
+
+In the :guilabel:`Events` section of the :guilabel:`Settings` page, there are selectable features
+that can be enabled to add various elements to events created with the Odoo *Events* application.
+
+.. image:: event_essentials/settings-events-section.png
+   :align: center
+   :alt: The Events section on the Odoo Events settings page in the Odoo Events application.
+
+The :guilabel:`Schedule & Tracks` feature allows users to manage and publish a schedule with tracks
+for events. *Tracks* is a catch-all term that refers to talks, lectures, demostrations,
+presentations, and other similar elements that users may choose to include as part of an event.
+
+When the :guilabel:`Schedule & Tracks` feature is enabled, two additional fields appear beneath it:
+:guilabel:`Live Broadcast` and :guilabel:`Event Gamification`.
+
+The :guilabel:`Live Broadcast` feature lets users air tracks online, via a *YouTube* integration.
+
+The :guilabel:`Event Gamification` feature lets users share a quiz after any event track, in order
+for attendees to gauge how much they learned from the track they just saw/heard. Companies can also
+benefit from this feature, in that the subsequent responses and results of the quizzes can help
+determine where a company's strengths and weaknesses are, when it comes to their presentations.
+
+Next, is the :guilabel:`Online Exhibitors` feature. This feature allows uers to display sponsors and
+exhibitors on event pages, which can serve as a valuable incentive to encourage partners and
+businesses to participate in the event.
+
+The :guilabel:`Jitsi Server Domain` field represents an external conferencing service that is
+integrated with Odoo. It is what is used to create and host virtual conferences, community rooms,
+and other similar elements for events.
 
 .. note::
-   In most cases, the :guilabel:`Preview Text` is displayed next to the subject. Keep this field
-   empty to ensure the first characters of the email content appear, instead.
+   The :guilabel:`Jitsi Server Domain` field is populated, by default.
 
-Select invitees and configure recipient filters
------------------------------------------------
+The :guilabel:`Community Chat Rooms` feature allows users to create virtual conference rooms for
+event attendees, providing them with a centralized place to meet and discuss anything related to the
+event.
 
-In the middle of the invitation form, find and click the :guilabel:`Recipients` field, to reveal a
-drop-down menu of recipient options. These choices represent where Odoo will find the desired
-recipients' information.
+Lastly, there is the :guilabel:`Booth Management` feature. This feature provides users with the
+ability to create and manage event booths and booth reservations. When enabled, users can create
+different booth tiers, with individual price points, and sell them to interested parties.
 
-Once an option from this menu is selected (e.g. :guilabel:`Applicant`, :guilabel:`Contact`,
-:guilabel:`Event Registration`, :guilabel:`Lead/Opportunity`, etc.), Odoo will send the invitation
-to all recipients who match that initial rule. Additional rules can be added to narrow down the
-target recipients, by clicking :guilabel:`Add Filter`.
+Registration section
+--------------------
 
-.. image:: event_essentials/add-filter-button.png
+The :guilabel:`Registration` section of the :guilabel:`Settings` page provides selectable settings
+that are directly related to event registration.
+
+.. image:: event_essentials/settings-registration-section.png
    :align: center
-   :alt: View of the add filter button beneath the recipients field in Odoo Events.
+   :alt: The Registration section in the Odoo Events settings page in the Odoo Events application.
 
-Clicking :guilabel:`Add Filter` reveals three fields, formatted like an equation. To reveal the
-sub-menu options, click each field, and make the desired selections, until the preferred
-configuration has been acheived. The number of :guilabel:`Records` that match the rule(s) are
-indicated to the right of the :guilabel:`Recipients` field, in green.
+The :guilabel:`Tickets` setting allows users to sell event tickets, via standard sales orders.
 
-.. note::
-   Some sub-menu options in the first rule field allow for a second choice to provide even more
-   specificity.
+The :guilabel:`Online Ticketing` setting creates a selectable *Event Ticket* product type on product
+forms, which provides users with the ability to sell event tickets online, via their
+website/eCommerce store.
 
-To the right of each rule, are :guilabel:`x`, :guilabel:`+`, and :guilabel:`...` icons. The
-:guilabel:`x` icon deletes a specific node (line) of the rule. The :guilabel:`+` icon adds a node
-(line) to the rule. And, the :guilabel:`...` icon adds a branch to the node. A branch means two
-additional, indented sub-nodes are added to the rule, providing even more specificity to the line
-above it.
+Attendance section
+------------------
 
-Build a custom event invite
----------------------------
+In the :guilabel:`Attendance` section of the :guilabel:`Settings` page, there is a selectable
+setting that is directly related to how attendees can attend/enter the event.
 
-In the :guilabel:`Mail Body` tab, there are a number of pre-configured message templates to choose
-from. Select the desired template, and modify every element of its design details with Odoo's
-drag-and-drop web builder, located on the right sidebar.
-
-.. image:: event_essentials/event-email-builder-block.gif
+.. image:: event_essentials/settings-attendance-section.png
    :align: center
-   :alt: View of the drag and drop building blocks used to customize event invite emails.
+   :alt: The Attendance section in the Odoo Events Settings page in the Odoo Events application.
 
-.. tip::
-   To build an email event invite from scratch, select the :guilabel:`Plain Text` template, and
-   Odoo will provide a blank email canvas, which can be customized either by using the frontend
-   rich text editor that accepts slash (`/`) commands, or the XML code editor when :ref:`developer
-   mode <developer-mode>` is engaged and the :guilabel:`</>` icon is pressed.
+The :guilabel:`Use Event Barcode` setting, when activated, enables barcode (and QR code) scanning
+for attendees to enter the event. This provides attendees with quick access, and helps Odoo users
+easily track, manage, and analyze all event attendees.
 
-.. note::
-   The :guilabel:`Mail Body` tab (and template options), are only available if the event invite
-   :guilabel:`Mailing Type` is designated as an :guilabel:`Email`. If :guilabel:`SMS` is the
-   :guilabel:`Mailing Type`, a :guilabel:`SMS Content` tab (consisting of a blank text space), is
-   available, instead.
+The :guilabel:`Barcode Nomenclature` field, beneath the :guilabel:`Use Event Barcode` setting, is
+set to :guilabel:`Default Nomenclature`, by default, but can be changed at any time.
 
-Modify event invite settings
-----------------------------
-
-The options under the :guilabel:`Settings` tab are different, depending on the specified
-:guilabel:`Mailing Type`.
-
-If the :guilabel:`Email` option is selected as the :guilabel:`Mailing Type`, an employee can be
-designated as the :guilabel:`Responsible`, meaning that person is the one responsible for this
-particular invite message. :guilabel:`Send From` and :guilabel:`Reply To` email aliases can be
-designated here, as well.
-
-Also, if any specific documents are required (or helpful) for this event invite, they can be sent
-along with this email, by clicking :guilabel:`ATTACH A FILE`, and adding the appropriate
-document(s).
-
-If the :guilabel:`SMS` option is selected as the :guilabel:`Mailing Type`, a :guilabel:`Responsible`
-can be designated, and the option to :guilabel:`Include an opt-out link` is available.
-
-Send event invitations to recipients
-------------------------------------
-
-If the selected :guilabel:`Mailing Type` is :guilabel:`Email`, there are three options to send the
-invite: :guilabel:`Send`, :guilabel:`Schedule`, and :guilabel:`Test`.
-
-The :guilabel:`Send` option sends the invite right away. The :guilabel:`Schedule` option reveals a
-pop-up, in which a scheduled date/time can be selected for the email to be sent. The
-:guilabel:`Test` option reveals a :guilabel:`Test Mailing` pop-up, where specific recipient email
-addresses can be entered for Odoo to send them the current version of the mailing for review before
-officially sending it out to prospective event attendees.
-
-If the selected :guilabel:`Mailing Type` is :guilabel:`SMS`, there are four options to send the
-invite: :guilabel:`Put in Queue`, :guilabel:`Send Now`, :guilabel:`Schedule`, and :guilabel:`Test`.
-
-The :guilabel:`Put in Queue` option schedules an SMS message to all recipients (that match the
-designated rules, if any) in the near future. Clicking :guilabel:`Put in Queue` reveals a pop-up,
-requiring confirmation. When confirmed, a blue banner appears on the event invite template form,
-indicating that the SMS will be sent later that day.
-
-.. note::
-   The :guilabel:`Send Now`, :guilabel:`Schedule`, and :guilabel:`Test` options all function the
-   same way for both :guilabel:`Mailing Type` options.
-
-Publish events
-==============
-
-Until an event is published, it will remain hidden from public view on the website and registering
-for it will not be possible. To publish an event, navigate to it either from the backend of Odoo
-through the :guilabel:`Events` application, or access the hidden event page through the frontend
-as either a priveliged user or administrator.
-
-If navigating from the backend, go to the event form, and click the :guilabel:`Go to Website`
-smart button to reach the event page on the website (on the frontend). If starting from the frontend
-, simply navigate to the event page that needs to be published.
-
-No matter the route, an event page can only be published from the frontend. In the upper right
-corner of the event page on the website, toggle the switch from the red :guilabel:`Unpublished`
-status to the green :guilabel:`Published` status. Doing so instantly makes the event page
-accessible to the public on the website.
-
-.. image:: event_essentials/events-frontend-publish.png
-   :align: center
-   :alt: View of a website page and the option to publish the event in Odoo Events.
+.. seealso::
+   - :doc:`sell_tickets`
+   - :doc:`track_manage_talks`
