@@ -285,6 +285,11 @@ Dependencies
 
          .. tab:: Install with pip
 
+            .. warning::
+
+               Using pip may lead to security issue and broken dependencies, only do this if you
+               know what you rare doing.
+
             As some of the Python packages need a compilation step, they require system libraries to
             be installed.
 
