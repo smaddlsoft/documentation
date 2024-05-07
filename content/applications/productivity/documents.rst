@@ -97,13 +97,15 @@ Configuration --> Workspaces`, opening the workspace you want to describe and go
    .. image:: documents/sub-workspaces-creation.png
       :alt: Create sub-workspaces from the left menu
 
+.. _documents/management:
+
 Documents management
 ====================
 
-When selecting or opening a document, the right panel displays different options. On the top,
-additional options might be available: :guilabel:`Download`, :guilabel:`Share`, :guilabel:`Replace`,
-:guilabel:`Lock` or :guilabel:`Split`. It is also possible to :guilabel:`Open chatter` or use the
-:guilabel:`Move to trash` option.
+When selecting or opening a document, the right panel displays different options. At the top,
+additional options might be available: :guilabel:`Download`, :guilabel:`Share this selection`,
+:guilabel:`Replace`, :guilabel:`Lock` or :ref:`Split <documents/split>`. It is also possible to
+:guilabel:`Open chatter` or use the :guilabel:`Move to trash` option.
 
 .. image:: documents/right-panel-options.png
    :align: center
@@ -114,15 +116,19 @@ an :guilabel:`Owner` can be assigned. The related :guilabel:`Workspace` can be m
 possible to access the related :guilabel:`Journal Entry` or add :guilabel:`Tags`.
 
 .. note::
-   - The :guilabel:`Contact` is the person related to the document and assigned to it. He can only
-     view the document and not modify it. I.e.: an existing supplier in your database is the contact
-     for their bill.
-   - The person who creates a document is, by default :guilabel:`Owner` of it and has complete
-     rights to it. It is possible to replace the owner of a document. I.e., an employee
-     must be owner of a document to be able to see it in "My Profile".
+   - The :guilabel:`Contact` is a person related to the document, who has only viewing access rights
+     to the document. I.e.: an existing supplier in your database.
+   - The person who creates a document is by default :guilabel:`Owner` and has full access rights to
+     it. It is possible to replace the owner of a document by selecting someone else from the
+     dropdown list of the :guilabel:`Owner` field.
+
+.. tip::
+   An employee must be owner of a document to be able to see it in **My Profile**.
 
 Different :ref:`Actions <documents/workflow-actions>` are available at the bottom of the right
 panel, depending on the workspace where your document is stored.
+
+.. _documents/split:
 
 Split PDF documents
 -------------------
@@ -158,7 +164,9 @@ Select the workspace where the file should be stored, click :guilabel:`Upload`, 
 :guilabel:`Note`, if needed. Then, click :guilabel:`Request`. A placeholder for the missing document
 is created in the workspace.
 
-When your document is available, click the placeholder to upload it.
+When your document is available, click the placeholder to upload it in its stead. By default, you
+are set as the document :guilabel:`Owner`, and the requested person is set as the
+:guilabel:`Contact`.
 
 You can see all missing documents by going to the **Activity** view and to the :guilabel:`Requested
 Document` column.
@@ -175,6 +183,8 @@ Document` column.
    .. image:: documents/reminder-email.png
       :alt: send a reminder email from the Activity view
 
+.. _documents/add-a-link:
+
 Add a link
 ~~~~~~~~~~
 
@@ -184,19 +194,73 @@ To add a link to your documents dashboard, click on :guilabel:`Add a Link`, ente
 Share
 ~~~~~
 
-You can create a share link to a document or all documents of a workspace. It allows anyone to
-download the file(s) or upload files to a workspace.
+You can make a document or a workspace accessible to anyone by sharing a URL.
 
-To do so, select the workspace or the document and click the arrow next to the :guilabel:`Upload`
-button then :guilabel:`Share`. On the pop-up, the share :guilabel:`URL` is displayed.
-:guilabel:`Copy` it to share it with anyone. :guilabel:`Name` the share link and set a validity date
-for the URL by filling in the :guilabel:`Valid Until` field. Tick the :guilabel:`Include Sub
-Folders` box if you also want to share a workspace's sub-folders. To let users upload their own
-documents, select :guilabel:`Download and Upload`.
+Share a document
+****************
 
-.. note::
-   It is possible to only share one or more documents (without their workspace) by selecting them
-   and clicking :guilabel:`Share`.
+To generate a **share link** to a document, select the document, click the arrow next to the
+:guilabel:`Upload` button, and click :guilabel:`Share`.
+
+In the pop-up, you can :guilabel:`Name` the share link, set a validity date by filling in the
+:guilabel:`Valid Until` field, and if you own more than one site, select the :guilabel:`Website` you
+want so the right domain name is reflected in the URL.
+
+Click :guilabel:`Copy` or :guilabel:`Share` to send the URL to whomever you want.
+
+.. tip::
+   You can also generate a share URL by selecting the document, going to the right panel, and
+   clicking the :guilabel:`Share this selection` icon.
+
+Share a workspace
+*****************
+
+You can share a link to a workspace and allow users to :guilabel:`Download` its content or
+:guilabel:`Download and Upload` files to it.
+
+To do so, go to the left column of your dashboard. In the :guilabel:`Workspace` section, select the
+workspace to share, and possibly one or several tags that will be automatically added to the
+uploaded documents. Then, click the arrow next to the :guilabel:`Upload` button and
+:guilabel:`Share`.
+
+In the pop-up, a share :guilabel:`URL` you can :guilabel:`Copy` is displayed. You can
+:guilabel:`Name` your share link, set a validity date by filling in the :guilabel:`Valid Until`
+field, tick the :guilabel:`Include Sub Folders` box if you want to share the workspace's
+sub-folders, and if you own more than one site, select the :guilabel:`Website` you
+want so the share link reflects the right domain name.
+
+Then, allow users to either :guilabel:`Download` files from your workspace, or to :ref:`Download and
+Upload <documents/upload>` files to it.
+
+.. Note::
+   - The links added to your workspace using the :ref:`Add a Link <documents/add-a-link>` option
+     cannot be shared and are, therefore, excluded.
+   - When tags are applied to a shared workspace, users can exclusively access the documents
+     associated with those tags.
+
+.. _documents/upload:
+
+Upload document
+^^^^^^^^^^^^^^^
+
+Select the :guilabel:`Download and Upload` option to enable users to upload their files to your
+workspace.
+
+To allow the upload of documents by email, you can create an email alias. The domain name is set by
+default but can be modified by clicking on it. The documents sent to this email alias are uploaded
+using the chosen tags to the workspace.
+
+By default, the :guilabel:`Document Owner` is the person who uploads a file to a workspace, but you
+can select someone else. You can also set a :guilabel:`Contact`, usually an external person, such as
+a partner.
+
+You can check the :guilabel:`Create a new activity` box to automatically create an activity when a
+document is uploaded, select the :guilabel:`Activity type` from the dropdown list, and set the
+:guilabel:`Due Date In` field. You can also add a :guilabel:`Summary` and a :guilabel:`Responsible`
+person assigned to the activity.
+
+.. tip::
+   Go to :menuselection:`Configuration --> Share & Emails` to see and manage your share links.
 
 New spreadsheet
 ~~~~~~~~~~~~~~~
