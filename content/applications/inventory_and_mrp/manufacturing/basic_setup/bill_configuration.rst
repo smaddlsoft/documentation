@@ -6,8 +6,6 @@ Bill of materials
 .. |BOMs| replace:: :abbr:`BoMs (Bills of Materials)`
 .. |list| replace:: :icon:`fa-list-ul` :guilabel:`(list)`
 
-.. _manufacturing/management/bill-configuration:
-
 A *bill of materials* (or *BoM* for short) is a document component quantities needed for a product,
 often including production operations and step-by-step guidelines.
 
