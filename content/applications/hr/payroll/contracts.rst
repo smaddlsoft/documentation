@@ -2,9 +2,9 @@
 Contracts
 =========
 
-Every employee in Odoo is required to have a contract in order to be paid. A contract outlines the
-terms of an employee's position, their compensation, their working hours, and any other details
-about their position.
+Every employee in Odoo is required to have a contract to be paid. A contract outlines the terms of
+an employee's position, their compensation, their working hours, and any other details about their
+position.
 
 .. important::
    Contract documents (PDFs) are uploaded and organized using the *Documents* application, and are
@@ -14,7 +14,7 @@ about their position.
 
 To view the employee contracts, go to the :menuselection:`Payroll app --> Employees --> Contracts`
 from the top menu. All employee contracts, and their current contract status, are displayed in a
-default kanban view. The default view displays both running contracts and contracts that need
+default Kanban view. The default view displays both running contracts and contracts that need
 action. Expired and canceled contracts are hidden in the default view.
 
 .. image:: contracts/contracts-overview.png
@@ -25,7 +25,7 @@ action. Expired and canceled contracts are hidden in the default view.
    The list of contracts in the *Payroll* application matches the list of contracts in the
    *Employees* application. The default contracts view in the *Payroll* application displays running
    contracts and contracts needing attention, while the default contracts view in the *Employees*
-   application displays all contracts in a kanban view, organized by their stage, regardless of
+   application displays all contracts in a Kanban view, organized by their stage, regardless of
    status. All contracts can be viewed by changing the filters.
 
 Create a new contract
@@ -89,6 +89,18 @@ Contract details
 The contract details section allows for the addition and editing of a contract, and the ability to
 send the contract to the employee for approval and signatures.
 
+.. important::
+   To access the various contract template fields in the :guilabel:`Contract Details` section, the
+   :guilabel:`Salary Configurator` module must be installed.
+
+   To install this module, navigate to the *Apps* application. In the search bar, delete the
+   :guilabel:`Apps` filter, then type in :guilabel:`Salary Configurator`.
+
+   Click :guilabel:`Install` on the :guilabel:`Salary Configurator` module, and that module, along
+   with the :guilabel:`Salary Configurator - Holidays` and :guilabel:`Salary Configurator - Payroll`
+   modules install as well. Once the modules are installed, the database reverts to the main
+   dashboard.
+
 .. image:: contracts/contract-details.png
    :align: center
    :alt: Contract details in optional tabs for a new contract.
@@ -131,7 +143,7 @@ A pop-up window appears with all the contract details. Modify the fields for the
   - :guilabel:`All Users`: Any user in the organization can sign the contract.
   - :guilabel:`On Invitation`: Only users selected in this field can sign the contract.
 
-- :guilabel:`Invited Users`: Select the person(s) that can sign the document.
+- :guilabel:`Invited Users`: Select the persons that can sign the document.
 - :guilabel:`Document`: The attached document can be replaced by clicking the :guilabel:`✏️
   (pencil)` icon. A pop-up window appears so another document can be selected for upload. The file
   must be a PDF. To remove the document, click the :guilabel:`🗑️ (trash can)` icon.
