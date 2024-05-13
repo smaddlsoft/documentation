@@ -8,7 +8,7 @@ Bill of materials
 
 .. _manufacturing/management/bill-configuration:
 
-A *bill of materials* (or *BoM* for short) is a document component quantities needed for a product,
+A *bill of materials* (or *BoM* for short) documents the component quantities needed for a product,
 often including production operations and step-by-step guidelines.
 
 BoM setup
@@ -72,7 +72,7 @@ Materials` and selecting the desired |BOM|. To add a new operation, go to the :g
 tab, and click :guilabel:`Add a line`.
 
 Doing so opens the :guilabel:`Create Operations` pop-up window, where the various fields of the
-operations are configured:
+operation are configured:
 
 - :guilabel:`Operation`: name of the operation.
 - :guilabel:`Work Center`: select existing locations to perform the operation, or create a new work
@@ -120,7 +120,7 @@ Instructions
    To add detailed instructions to operations, the *Quality* app must be installed.
 
 Add specific instructions to an existing operation by clicking the operation's |list| icon in the
-:guilabel:`Instructions` column. The number in the :guilabel:`Instructions` column shows the amount
+:guilabel:`Instructions` column. The number in the :guilabel:`Instructions` column shows the number
 of existing detailed instructions there are for the operation.
 
 .. image:: bill_configuration/add-instructions.png
