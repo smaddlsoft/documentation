@@ -903,6 +903,12 @@ Configuration
         :alt: The Employment Hero "Business ID" number is in the URL
 
    - You can choose any Odoo journal to post the payslip entries.
+#. Configure the tax by going to :menuselection:`Accounting --> Configuration --> Taxes`. Create the
+   necessary taxes for the Employment Hero payslip entries. Fill in the tax code from
+   **Employment Hero** to :guilabel:`Matching Employment Hero Tax`.
+
+    .. image:: australia/employment-hero-taxes.png
+        :alt: Employment Hero taxes in Odoo Accounting
 
 How does the API work?
 ----------------------
