@@ -390,7 +390,7 @@ present, and time off is not allowed on those specific days.
 
 These types of days are called *mandatory days* in Odoo. These can be configured to be company-wide,
 or department specific. When configured, employees in the specified department or company are unable
-to submit time off requests for these mandatory days.
+to submit time off requests for these mandatory days, unless their users have Administrator or Officer rights specified in Settings/Users for the Time Off module.
 
 Create mandatory days
 ~~~~~~~~~~~~~~~~~~~~~
